@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html onclick="next()">
+    <head>
+        <title>Non-EU Game Idea Generator</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div style="text-align: center; font-size: 250%; margin-top: 2em;">Don't make</div>
+        <div id="idea" style="text-align: center; font-size: 250%; margin-top: 0.5em;"></div>
+        <div style="text-align: center; font-size: 250%; margin-top: 0.5em;">or no EU funding for you!</div>
+        <div style="text-align: center; margin-top: 3em;">(click for another one)</div>
+        <script>
+function next() {
+var genres = ["puzzle", "memory", "sports", "racing", "running", "rhythm", "social", "quiz", "party", "versus fighting", "word", "number", "mind"];
+var patterns = ["a A and B game", "a A game that promotes tourism", "a violent A game", "a pornographic A game", "a A game that is part of a promotional campaign", "a violent, pornographic A game", "a racist A game", "a A game to promote a specific organization"];
+var gA = genres[Math.floor(Math.random() * genres.length)];
+var gB = null;
+while (gB == null || gB == gA) {
+    gB = genres[Math.floor(Math.random() * genres.length)];
+}
+var pattern = patterns[Math.floor(Math.random() * patterns.length)];
+document.getElementById("idea").innerHTML = pattern.replace("A", gA).replace("B", gB);
+}
+next();
+        </script>
+    </body>
+</html>
